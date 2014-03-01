@@ -2,3 +2,6 @@
 *.pot
 *.pyc
 local_settings.py
+acm_members/
+louisville_crime/
+db.sqlite3
