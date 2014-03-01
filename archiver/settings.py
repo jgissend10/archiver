@@ -37,8 +37,6 @@ INSTALLED_APPS = (
     'rest_framework_swagger',
     'archiver',
     ## APIs go below.
-    'acm_members',
-    'louisville_crime',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -84,6 +82,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+)
+
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates'), # Change this to your own directory.
 )
@@ -101,7 +104,11 @@ REST_FRAMEWORK = {
     #]
 }
 
+ENABLED_APIS = ()
+
 try:
     from local_settings import *
 except ImportError:
     pass
+
+INSTALLED_APPS = INSTALLED_APPS + ENABLED_APIS

@@ -1,0 +1,6 @@
+SECRET_KEY = "" #Secret Key Goes here
+
+#List of Enabled APIs here, Put app names like would be found in INSTALLED_APPS
+ENABLED_APIS = (
+    '',
+)
