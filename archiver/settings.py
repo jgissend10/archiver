@@ -19,7 +19,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = DEBUG 
 
 ALLOWED_HOSTS = []
 
@@ -33,6 +33,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
     'rest_framework',
     'rest_framework_swagger',
     'archiver',
@@ -102,6 +103,9 @@ REST_FRAMEWORK = {
     #'DEFAULT_PERMISSION_CLASSES': [
     #    'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     #]
+    'PAGINATE_BY': 10,                 # Default to 10
+    'PAGINATE_BY_PARAM': 'page_size',  # Allow client to override, using `?page_size=xxx`.
+    'MAX_PAGINATE_BY': 100             # Maximum limit allowed when using `?page_size=xxx`.
 }
 
 ENABLED_APIS = ()
