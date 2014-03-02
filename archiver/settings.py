@@ -37,7 +37,6 @@ INSTALLED_APPS = (
     'rest_framework',
     'rest_framework_swagger',
     'archiver',
-    ## APIs go below.
 )
 
 MIDDLEWARE_CLASSES = (
