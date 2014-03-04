@@ -30,6 +30,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
+    'django.contrib.gis',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
@@ -37,6 +38,7 @@ INSTALLED_APPS = (
     'rest_framework',
     'rest_framework_swagger',
     'djangobower',
+    'south',
     'archiver',
 )
 
@@ -59,11 +61,13 @@ WSGI_APPLICATION = 'archiver.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': 'archiver',
+        'USER': 'archiver',
     }
 }
 
+POSTGIS_VERSION = (2, 1, 1)
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 

@@ -4,4 +4,9 @@
 local_settings.py
 acm_members/
 louisville_crime/
+world_borders/
+components/
+data/
+multigtfs
+multigtfsrt/
 db.sqlite3
