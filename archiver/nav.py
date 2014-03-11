@@ -6,6 +6,7 @@ class SubOption(NavOption):
     recursion depth of python (Further then you want to try and go)
     """
     name = u'Sub Option'
+    icon = 'user'
     view = 'archiver.views.dashboard'
 
 class TestOption(NavOption):
@@ -24,6 +25,7 @@ class TestNav(Nav):
     """
     name = u'First Test Nav'
     view = ''
+    icon = 'cog'
     nav_group = 'main'
     options = [TestOption]
 

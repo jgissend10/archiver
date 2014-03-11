@@ -13,4 +13,6 @@ def dashboard(request):
         context['models'] = [app.get_models() for app in context['enabled_apis']]
         context['permissions'] = [app.get_permissions() for app in context['enabled_apis']]
         context['request'] = request
-        return render_to_response('archiver/dashboard.html', context)
+    else:
+   		context['request'] = request
+    return render_to_response('archiver/dashboard.html', context)

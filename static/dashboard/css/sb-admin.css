@@ -89,6 +89,10 @@
     margin-left: -123px;
 }
 
+.navbar-right {
+    float: right!important;
+}
+
 .navbar-top-links .dropdown-user {
     right: 0;
     left: auto;
