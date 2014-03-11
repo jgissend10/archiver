@@ -1,4 +1,5 @@
 from django_nav import nav_groups, Nav, NavOption
+from django_nav.conditionals import user_is_authenticated
 
 class SubOption(NavOption):
     """
@@ -6,8 +7,10 @@ class SubOption(NavOption):
     recursion depth of python (Further then you want to try and go)
     """
     name = u'Sub Option'
-    icon = 'user'
-    view = 'archiver.views.dashboard'
+    icon = ''
+    view = ''
+    conditional = {'function': user_is_authenticated, 'args': [], 'kwargs': {}}
+
 
 class TestOption(NavOption):
     """
@@ -17,7 +20,7 @@ class TestOption(NavOption):
     view = ''
     options = [SubOption]
 
-class TestNav(Nav):
+class TopNav(Nav):
     """
         This is a primary Navigation link, Most apps should only define one of these
         If the application truly wants to have Navigation links for all of their landing pages
@@ -29,4 +32,4 @@ class TestNav(Nav):
     nav_group = 'main'
     options = [TestOption]
 
-nav_groups.register(TestNav)
+nav_groups.register(TopNav)

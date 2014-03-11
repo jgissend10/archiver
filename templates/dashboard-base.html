@@ -51,6 +51,10 @@
                     {% for nav in main %}
                     {{ nav }}
                     {% endfor %}
+                    {% get_nav "apis" as apis %}
+                    {% for nav in apis %}
+                    {{ nav }}
+                    {% endfor %}
                 </ul>
                 <!-- /#side-menu -->
             </div>
