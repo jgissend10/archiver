@@ -7,12 +7,9 @@ def cover(request):
 	return render_to_response('archiver/cover.html', context)
 
 def dashboard(request):
-    context = {}
+    context = {'request': request, 'user': request.user}
     if request.user.is_authenticated():
         context['enabled_apis'] =  ArchiverApp.objects.filter(creators=request.user)
         context['models'] = [app.get_models() for app in context['enabled_apis']]
         context['permissions'] = [app.get_permissions() for app in context['enabled_apis']]
-        context['request'] = request
-    else:
-   		context['request'] = request
     return render_to_response('archiver/dashboard.html', context)

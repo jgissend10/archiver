@@ -16,5 +16,4 @@ class ArchiverApp(models.Model):
         return ContentType.objects.filter(app_label=self.app_label)
     
     def get_permissions(self):
-        return [Permission.objects.filter(content_type=model) for model in self.get_models()]
-
+        return [(model, Permission.objects.filter(content_type=model)) for model in self.get_models()]

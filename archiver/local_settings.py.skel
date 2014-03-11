@@ -4,3 +4,18 @@ SECRET_KEY = "" #Secret Key Goes here
 ENABLED_APIS = (
     '',
 )
+
+# Database
+# https://docs.djangoproject.com/en/1.6/ref/settings/#databases
+
+DATABASES = {
+    'default': {
+        'ENGINE': '',
+        'NAME': '',
+    }
+}
+
+STATIC_URL = '/static/'
+STATIC_ROOT = '/static/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = '/media/'

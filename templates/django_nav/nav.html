@@ -2,6 +2,7 @@
     <a {% if nav.view %}onclick="window.location = '{{ nav.get_absolute_url }}'"{% endif %} href="{% if nav.view %}{{ nav.get_absolute_url }}{% else %}#{% endif %}">{% if nav.icon %}<span class="glyphicon glyphicon-{{ nav.icon }}"></span> {% endif %}{{ nav.name }}{% if nav.option_list %}<span class="fa arrow"></span></a>
   	<ul class="nav nav-second-level">
     {% for option in nav.option_list %}
-    {{ option }}{% endfor %}
+    {{ option }}
+    {% endfor %}
     </ul>{% else %}</a>{% endif %}
 </li>
