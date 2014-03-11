@@ -1,5 +1,5 @@
 <li>
-<a {% if option.view %}onclick="window.location = '{{ option.get_absolute_url }}'"{% elif option.url %}onclick="window.location = '{{ option.url }}'"{% endif %} href="{% if option.view %}{{ option.get_absolute_url }}{% elif option.url %}{{ option.url }}{% else %}#{% endif %}">{% if option.icon %}<span class="glyphicon glyphicon-{{ option.icon }}"></span> {% endif %}{{ option.name }}{% if option.option_list %}<span class="fa arrow"></span></a>
+<a {% if option.dashboard %}onclick="$( '#page-wrapper' ).load( '{% if option.view %}{{ option.get_absolute_url }}{% elif option.url %}{{ option.url }}{% endif %} #content' );"{% elif option.view %}onclick="window.location = '{{ option.get_absolute_url }}'"{% elif option.url %}onclick="window.location = '{{ option.url }}'"{% endif %} href="#">{% if option.icon %}<span class="glyphicon glyphicon-{{ option.icon }}"></span> {% endif %}{{ option.name }}{% if option.option_list %}<span class="fa arrow"></span></a>
     <ul class="nav nav-third-level">
     {% for opt in option.option_list %}
     {{ opt }}
