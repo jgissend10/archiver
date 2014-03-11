@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'south',
     'sekizai',
     'archiver',
+    'django_nav'
 )
 
 MIDDLEWARE_CLASSES = (
