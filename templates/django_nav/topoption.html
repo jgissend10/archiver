@@ -1,0 +1,5 @@
+{% if option.divider %}
+<li class="divider"></li>
+{% else %}
+<li><a href="{{ option.get_absolute_url }}">{% if option.icon %}<span class="glyphicon glyphicon-{{ option.icon }}"></span> {% endif %}{{ option.name }}</a></li>
+{% endif %}

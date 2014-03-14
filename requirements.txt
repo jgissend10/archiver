@@ -7,7 +7,6 @@ django-classy-tags==0.5
 django-extensions==1.3.3
 django-filter==0.7
 django-guardian==1.1.1
-django-nav==0.6-beta-2
 django-rest-swagger==0.1.13
 django-sekizai==0.7
 djangorestframework==2.3.12
@@ -17,3 +16,5 @@ psycopg2==2.5.2
 pygraphviz==1.2
 six==1.5.2
 wsgiref==0.1.2
+-e git+https://github.com/jgissend10/django-nav#egg=django-nav
+

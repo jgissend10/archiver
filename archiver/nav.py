@@ -9,8 +9,29 @@ class ArchiverNav(Nav):
     """
     name = u'ACM Archiver'
     view = 'archiver.views.dashboard'
-    dashboard = True
     icon = 'cog'
     nav_group = 'main'
 
+class LoginOption(NavOption):
+    name = u'Login'
+    url = '/accounts/login/'
+    template = 'django_nav/topoption.html'
+    conditional = {'function': lambda context, *args, **kwargs: not user_is_authenticated(context, *args, **kwargs), 'args': [],
+                               'kwargs': {}}
+
+class LogoutOption(NavOption):
+    name = u'Logout'
+    url = '/accounts/logout/'
+    template = 'django_nav/topoption.html'
+    conditional = {'function': user_is_authenticated, 'args': [],
+                               'kwargs': {}}
+
+class UserTopNav(Nav):
+    name = u''
+    icon = 'user'
+    nav_group = 'top'
+    template = 'django_nav/topnav.html'
+    options = [LoginOption, LogoutOption]
+
+nav_groups.register(UserTopNav)
 nav_groups.register(ArchiverNav)
