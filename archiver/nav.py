@@ -1,5 +1,5 @@
 from django_nav import nav_groups, Nav, NavOption
-from django_nav.conditionals import user_is_authenticated
+from django_nav.conditionals import user_is_authenticated, user_is_not_authenticated
 
 class ArchiverNav(Nav):
     """
@@ -16,7 +16,7 @@ class LoginOption(NavOption):
     name = u'Login'
     url = '/accounts/login/'
     template = 'django_nav/topoption.html'
-    conditional = {'function': lambda context, *args, **kwargs: not user_is_authenticated(context, *args, **kwargs), 'args': [],
+    conditional = {'function': user_is_not_authenticated, 'args': [],
                                'kwargs': {}}
 
 class LogoutOption(NavOption):
