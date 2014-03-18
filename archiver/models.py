@@ -18,3 +18,12 @@ class ArchiverApp(models.Model):
     
     def get_permissions(self):
         return [(model, Permission.objects.filter(content_type=model)) for model in self.get_models()]
+
+def user_photo_url_builder(instance, filename):
+    return 'users/'+instance.user.username+"/"+filename
+
+class ArchiverProfile(models.Model):
+    user = models.OneToOneField(User)
+    picture = models.ImageField(upload_to=user_photo_url_builder)
+    personal_url = models.URLField()
+    url_display_text = models.CharField(max_length=30)

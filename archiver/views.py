@@ -9,4 +9,5 @@ def cover(request):
 
 @dashboard_view
 def dashboard(request, context):
+    context['creators'] = ArchiverApp.objects.get(app_label='archiver').creators.all()
     return render_to_response('archiver/dashboard.html', context)
