@@ -2,8 +2,20 @@
 
 /* ------------------------------- */
 
- body {
-    background-color: #f8f8f8;
+body {
+    background-color: #222;
+}
+
+.navbar-inverse {
+    border-color: #080808;
+}
+
+.navbar-inverse a {
+    color: #b84d45;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #b84d45;
 }
 
 /* Wrappers */
@@ -15,8 +27,9 @@
 }
 
 #page-wrapper {
-    padding: 0 15px;
-    min-height: 568px;
+    position: inherit;
+    padding: 1px 15px 30px 15px;
+    min-height: 800px;
     background-color: #fff;
 }
 
@@ -24,14 +37,14 @@
     #page-wrapper {
         position: inherit;
         margin: 0 0 0 200px;
-        padding: 51px 30px;
+        padding: 25px 15px;
         min-height: 1300px;
-        border-left: 1px solid #e7e7e7;
+        border-left: 1px solid #080808;
     }
 }
 
 .navbar-static-side ul li {
-    border-bottom: 1px solid #e7e7e7;
+    border-bottom: 1px solid #080808;
 }
 
 /* Navigation */
@@ -127,6 +140,11 @@
 
 .nav-third-level li a {
     padding-left: 52px;
+}
+
+.dropdown-menu {
+    left: auto;
+    right: 0;
 }
 
 @media(min-width:768px) {

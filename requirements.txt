@@ -2,11 +2,15 @@ Django==1.6.2
 Markdown==2.4
 South==0.7.6
 Werkzeug==0.9.4
+argparse==1.2.1
+distribute==0.6.24
 django-bower==4.8.1
 django-classy-tags==0.5
 django-extensions==1.3.3
 django-filter==0.7
 django-guardian==1.1.1
+-e git+https://github.com/jgissend10/django-nav#egg=django-nav
+django-registration==1.0
 django-rest-swagger==0.1.13
 django-sekizai==0.7
 djangorestframework==2.3.12
@@ -16,5 +20,3 @@ psycopg2==2.5.2
 pygraphviz==1.2
 six==1.5.2
 wsgiref==0.1.2
--e git+https://github.com/jgissend10/django-nav#egg=django-nav
-

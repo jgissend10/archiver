@@ -8,6 +8,7 @@ class ArchiverApp(models.Model):
     description = models.TextField()
     public = models.BooleanField()
     creators = models.ManyToManyField(User, related_name='archiver_apps')
+    members = models.ManyToManyField(User, related_name='api_members')
 
     def __unicode__(self):
         return self.name

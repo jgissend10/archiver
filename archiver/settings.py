@@ -32,6 +32,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
+    'registration',
     'rest_framework',
     'rest_framework_swagger',
     'djangobower',

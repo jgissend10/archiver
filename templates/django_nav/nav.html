@@ -1,4 +1,4 @@
-<li class="{% if nav.active %} active{% endif %}">
+<li class="{% if nav.active %}active{% endif %}">
 <a onclick="window.location = '{{ nav.get_absolute_url }}'" href="#">{% if nav.icon %}<span class="glyphicon glyphicon-{{ nav.icon }}"></span> {% endif %}{{ nav.name }}{% if nav.option_list %}<span class="fa arrow"></span></a>
   	<ul class="nav nav-second-level">
     {% for option in nav.option_list %}

@@ -1,3 +1,69 @@
 {% extends "dashboard-base.html" %}
+{% load static %}
 {% block content %}
+<div class="page-header">
+  <h1>ACM Archiver <small>Data for all!</small></h1>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-7">
+      <div class="well well-sm">ACM Archiver is a project dedicated to making data easier to store and retrive for the students of the CECS department at the J. B. Speed School of Engineering.</div>
+      <h2>Introduction</h2>
+        <p>The Archiver project consits of a main project, built in python with django, that holds smaller apps together. These apps, are easy to create and allow a robust set of features to be built around the data that the incase. These features include dashboard displays, a REST api framework, PostGIS database backend with the help of GEOdjango, and much more.</p>
+      <h2>Getting Started</h2>
+        <p>This project relies on a Python+Django backend to work. If you haven't used one (or either) before familiarize yourself with <a href="#">Python</a> and <a href="#">Django</a>.</p>
+      <h3>Archiver Features</h3>
+        <p>The following is a brief introduction to the features of Archiver:</p>
+      <h4>Dashboard</h4>
+        <p>Dashboard Blah</p>
+      <h4>Dashboard (cont.) - Navigation</h4>
+        <p>Navigation</p>
+      <h4>REST API Framework</h4>
+        <p>Rest Framework</p>
+      <h4>Admin interface and permissions</h4>
+        <p>DERRR</p>
+      <h4>PostGIS</h4>
+        <p>PostGIS and GEODjango</p>
+      <h2>Setting up Archiver Compatibility</h2> 
+        <p></p>
+      <h3>Models</h3>
+        <p></p>
+      <h3>Views</h3>
+        <p></p>
+      <h3>URLs</h3>
+        <p></p>
+      <h3>Templates</h3>
+        <p></p>
+      <h3>Static</h3>
+        <p></p>
+      <h3>Media</h3>
+        <p></p>
+    </div>
+    <div class="col-md-5">
+      <div class="panel panel-danger">
+        <div class="panel-heading">
+          <h3 class="panel-title">Project Manager</h3>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-4">
+              <img src="https://lh4.googleusercontent.com/-8ljbRreGGbA/UvgMVYMHSaI/AAAAAAAAMHg/YFEpryv9jwM/s256-no/cd8ad33c-2d24-4af7-a50d-952bd288ab31" name="aboutme" width="100" height="100" class="img-circle img-responsive" />
+            </div>
+            <div class="col-md-8">
+              <p><i class="glyphicon glyphicon-user"></i> James Gissendaner Jr.
+                <br/><i class="glyphicon glyphicon-envelope"></i> {{ "jamestgissendanerjr@gmail.com"|urlize }}
+                <br/><i class="glyphicon glyphicon-globe"></i> <a href="http://www.github.com/jgissend10/">Github</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="github-widget" data-repo="jgissend10/archiver"></div>
+    </div>
+  </div>
+</div>
 {% endblock %}
+{% block extrajs %}
+    {{ block.super }}
+    <script src="{% static "jquery.githubRepoWidget.js" %}"></script>
+{% endblock %}
+
