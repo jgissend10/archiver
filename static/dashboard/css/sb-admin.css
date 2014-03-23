@@ -37,7 +37,7 @@ body {
     #page-wrapper {
         position: inherit;
         margin: 0 0 0 200px;
-        padding: 25px 15px;
+        padding: 50px;
         min-height: 1300px;
         border-left: 1px solid #080808;
     }
