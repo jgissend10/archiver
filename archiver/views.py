@@ -1,13 +1,13 @@
-from django.shortcuts import render_to_response
+from django.shortcuts import render
+from django.template import RequestContext
 
 from archiver.models import ArchiverApp
 from archiver.decorators import dashboard_view
 
 def cover(request):
 	context = {}
-	return render_to_response('archiver/cover.html', context)
+	return render(request, 'archiver/cover.html', context)
 
-@dashboard_view
+@dashboard_view('archiver')
 def dashboard(request, context):
-    context['creators'] = ArchiverApp.objects.get(app_label='archiver').creators.all()
-    return render_to_response('archiver/dashboard.html', context)
+    return render(request, 'archiver/dashboard.html', context)

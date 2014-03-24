@@ -1,7 +1,8 @@
+{% load archiver_extras %}
 <ul class="nav navbar-top-links navbar-right">
 	<li class="dropdown">
     	<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-			{% if nav.icon %}<span class="glyphicon glyphicon-{{ nav.icon }}"></span> {% endif %}{{ nav.name }}<i class="fa fa-caret-down"></i>
+			{% if nav.icon %}<span class="glyphicon glyphicon-{{ nav.icon }}"></span> {% endif %}{% render_as_template nav.name %}<i class="fa fa-caret-down"></i>
         </a>
         <ul class="dropdown-menu">
 			{% for option in nav.option_list %}

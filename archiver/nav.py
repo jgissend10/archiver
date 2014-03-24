@@ -27,7 +27,7 @@ class LogoutOption(NavOption):
                                'kwargs': {}}
 
 class UserTopNav(Nav):
-    name = u''
+    name = u'Welcome {{ user }} ' 
     icon = 'user'
     nav_group = 'top'
     template = 'django_nav/topnav.html'

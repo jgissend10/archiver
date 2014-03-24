@@ -4,11 +4,13 @@ from django.contrib.contenttypes.models import ContentType
 
 class ArchiverApp(models.Model):
     name = models.CharField(max_length=50)
-    app_label = models.CharField(max_length=50)
+    app_label = models.CharField(max_length=50, unique=True)
+    flavor_text = models.CharField(max_length=30)
     description = models.TextField()
     public = models.BooleanField()
     creators = models.ManyToManyField(User, related_name='archiver_apps')
     members = models.ManyToManyField(User, related_name='api_members')
+    github = models.CharField(max_length=100)
 
     def __unicode__(self):
         return self.name

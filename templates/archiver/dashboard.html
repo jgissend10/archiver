@@ -1,14 +1,7 @@
-{% extends "dashboard-base.html" %}
+{% extends "dashboard-main-base.html" %}
 {% load static %}
-{% block content %}
-<div class="page-header">
-  <h1>ACM Archiver <small>Data for all!</small></h1>
-</div>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-7">
-      <div class="well well-sm">ACM Archiver is a project dedicated to making data easier to store and retrive for the students of the CECS department at the J. B. Speed School of Engineering.</div>
-      <h2>Introduction</h2>
+{% block projectinfo %}
+    <h2>Introduction</h2>
         <p>The Archiver project consits of a main project, built in python with django, that holds smaller apps together. These apps, are easy to create and allow a robust set of features to be built around the data that the incase. These features include dashboard displays, a REST api framework, PostGIS database backend with the help of GEOdjango, and much more.</p>
       <h2>Getting Started</h2>
         <p>This project relies on a Python+Django backend to work. If you haven't used one (or either) before familiarize yourself with <a href="#">Python</a> and <a href="#">Django</a>.</p>
@@ -38,34 +31,4 @@
         <p></p>
       <h3>User Contributed Media</h3>
         <p></p>
-    </div>
-    <div class="col-md-5">
-      <div class="panel panel-danger">
-        <div class="panel-heading">
-          <h3 class="panel-title">Project Manager</h3>
-        </div>
-        <div class="panel-body">
-          {% for creator in creators %}
-          <div class="row">
-            <div class="col-md-4">
-              <img src="{{ creator.archiverprofile.picture.url }}" name="aboutme" width="100" height="100" class="img-circle img-responsive" />
-            </div>
-            <div class="col-md-8">
-              <p><i class="glyphicon glyphicon-user"></i> <a href="{{ creator.get_absolute_url }}">{{ creator.get_full_name }}</a>
-                <br/><i class="glyphicon glyphicon-envelope"></i> {{ creator.email|urlize }}
-                <br/><i class="glyphicon glyphicon-globe"></i> <a href="{{ creator.archiverprofile.personal_url }}">{{ creator.archiverprofile.url_display_text }}</a></p>
-            </div>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-      <div class="github-widget" data-repo="jgissend10/archiver"></div>
-    </div>
-  </div>
-</div>
 {% endblock %}
-{% block extrajs %}
-    {{ block.super }}
-    <script src="{% static "jquery.githubRepoWidget.js" %}"></script>
-{% endblock %}
-
